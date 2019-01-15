@@ -9,8 +9,8 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ asset('public/css/app.css') }}">
-    <script src="{{ asset('public/js/app.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="{{ asset('js/app.js') }}"></script>
 
 </head>
 
@@ -18,27 +18,41 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <h2>CF_TONY 活動網站</h2>
-                <button class="btn btn-outline-dark">TEST Bootstrap</button>
+                <h2>Tony的活動網站</h2>
             </div>
         </div>
-
         <div class="row">
             <div class="col">
 
-                <form class="py-4">
+                <form action="{{ url('public/sendgmail') }}" method="POST" class="py-4 form-group">
+                    {{ csrf_field() }}
                     <div class="row">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="First name">
+                            <label>收件人姓名:</label>
+                            <input type="text" name="msg1" class="form-control" placeholder="收件人姓名">
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Last name">
+                            <label>收件人Email:</label>
+                            <input type="text" name="msg2" class="form-control" placeholder="收件人Email">
+                        </div>
+                    </div>
+                    <div class="row py-4">
+                        <div class="col">
+                                <label>Email內容:</label>
+                            <input type="text" name="msg3" class="form-control" placeholder="Email內容">
+                        </div>
+                    </div>
+                    <div class="row py-4">
+                        <div class="col" style="text-align: center">
+                            <button type="submit" class="btn btn-outline-info w-50">寄信</button>
                         </div>
                     </div>
                 </form>
 
             </div>
         </div>
+
+
     </div>
 </body>
 

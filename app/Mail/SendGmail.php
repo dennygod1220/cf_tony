@@ -11,16 +11,17 @@ class SendGmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    
+    public $par;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($par)
     {
         //
+        $this->par = $par;
     }
 
     /**
@@ -30,6 +31,8 @@ class SendGmail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->subject("Tony哥活動網站訊息")->view('sendgmail')->with([
+            'par' => $this->par,
+        ]);
     }
 }
