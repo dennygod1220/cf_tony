@@ -27,12 +27,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col" style="text-align:center">
                 <img src="{{asset('img/one.jpeg')}}" alt="" class="img-fluid">
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col" style="text-align:center">
                 <img src="{{asset('img/two.jpg')}}" alt="" class="img-fluid">
             </div>
         </div>
