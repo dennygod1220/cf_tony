@@ -11,11 +11,16 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
-
+    <style>
+        .row{
+            margin-left:0px;
+            margin-right:0px;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding:0px">
         <div class="row">
             <div class="col">
                 <h2>Tony的活動網站</h2>
@@ -23,8 +28,18 @@
         </div>
         <div class="row">
             <div class="col">
+                <img src="{{asset('img/one.jpeg')}}" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="{{asset('img/two.jpg')}}" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
 
-                <form action="{{ url('public/sendgmail') }}" method="POST" class="py-4 form-group">
+                <form action="{{ url('/sendgmail') }}" method="POST" class="py-4 form-group">
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col">
