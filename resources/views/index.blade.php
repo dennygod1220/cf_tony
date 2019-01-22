@@ -21,6 +21,17 @@
 
 <body>
     <div class="container-fluid" style="padding:0px">
+        @if (session('success'))
+        <div class="row">
+            <div class="col">
+
+                <div class="alert alert-success" role="alert">
+                    {{ session('success') }}
+                </div>
+
+            </div>
+        </div>
+        @endif
         <div class="row">
             <div class="col">
                 <h2>Tony的活動網站</h2>
@@ -53,7 +64,7 @@
                     </div>
                     <div class="row py-4">
                         <div class="col">
-                                <label>Email內容:</label>
+                            <label>Email內容:</label>
                             <input type="text" name="msg3" class="form-control" placeholder="Email內容">
                         </div>
                     </div>

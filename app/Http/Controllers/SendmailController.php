@@ -25,7 +25,8 @@ class SendmailController extends Controller
         ];
  
         Mail::to($to)->send(new SendGmail($par));
-        return  redirect()->route('/');
+        // return  redirect()->route('/');
+        return redirect('/')->with('success','寄信成功囉!!');
     }
 
 
